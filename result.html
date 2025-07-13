@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+
+<style>
+
+.result-dashboard {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.result-dashboard h2,
+.result-dashboard h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.stats {
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.stats div {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.stats span {
+  float: right;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.review-container {
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+}
+
+.review-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  border-left: 5px solid transparent;
+}
+
+.review-item.correct {
+  border-left-color: #28a745; /* green */
+}
+
+.review-item.incorrect {
+  border-left-color: #dc3545; /* red */
+}
+
+.review-item p {
+  margin: 5px 0;
+}
+
+.review-item .label {
+  font-weight: bold;
+}
+
+.retry-btn {
+  display: block;
+  margin: 30px auto 0;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.retry-btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="result-dashboard">
+  <h2>Quiz Result</h2>
+
+  <div class="stats">
+    <div><strong>Total Questions:</strong> <span id="total">10</span></div>
+    <div><strong>Correct Answers:</strong> <span id="correct">7</span></div>
+    <div><strong>Incorrect Answers:</strong> <span id="wrong">3</span></div>
+    <div><strong>Score:</strong> <span id="score">70%</span></div>
+  </div>
+
+  <h3>Detailed Review</h3>
+  <div class="review-container">
+    
+</div>
+
+  <button class="retry-btn" onclick="location.href = 'index.html'">Retry Quiz</button>
+</div>
+<script>
+
+let array  = JSON.parse(localStorage.getItem("Result") || [])
+console.log(array)
+correct.textContent = array[0].correct
+wrong.textContent = array[0].incorrect
+score.textContent = (parseInt(array[0].correct)  * 100/10)+"%"
+let add = document.querySelector(".review-container")
+let status = "";
+array.forEach(element => {
+    
+if (element.chose == element.answer) {
+    status = "correct"
+}else{
+
+    status = "incorrect"
+
+}
+
+    add.insertAdjacentHTML("beforeend",`
+    
+    
+    <div class="review-item ${status}">
+      <p><strong>${element.question.split(":")[0].trim()} : </strong>${element.question.split(":")[1].trim()}</p>
+      <p><span class="label">Your Answer:</span> ${element.chose}</p>
+      <p><span class="label">Correct Answer:</span> ${element.answer}</p>
+    </div>
+    
+    
+    `)
+
+
+});
+
+
+</script>
+</body>
+</html>
