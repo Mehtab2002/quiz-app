@@ -21,7 +21,7 @@ A responsive multiple-choice Quiz App developed using **HTML, CSS, and JavaScrip
 
 ## 🌐 Live Demo
 
-🔗 [View Live Website](https://Mehtab2002.github.io/quiz-app)  
+🔗 [View Live Website](https://mehtab2002.github.io/quiz-app/)  
 
 ## 📸 Screenshots
 
