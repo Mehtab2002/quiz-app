@@ -25,10 +25,9 @@ A responsive multiple-choice Quiz App developed using **HTML, CSS, and JavaScrip
 
 ## 📸 Screenshots
 
-![Quiz Start](screenshots/start.png)  
-![Question Screen](screenshots/question.png)  
-![Result Summary](screenshots/summary.png)  
-![Answer History](screenshots/answer-history.png)
+![Question Screen](https://github.com/Mehtab2002/quiz-app/blob/b93512b82c0619f6a81edad3fcd087d3c032cfb9/Screenshots/question.png)  
+![Result Summary](https://github.com/Mehtab2002/quiz-app/blob/b93512b82c0619f6a81edad3fcd087d3c032cfb9/Screenshots/Score%20card.png)  
+![Answer History](https://github.com/Mehtab2002/quiz-app/blob/b93512b82c0619f6a81edad3fcd087d3c032cfb9/Screenshots/result%20details.png)
 
 ## 📁 Folder Structure
 
